@@ -16,6 +16,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     // - 특정 데이터 수정하기 - save() : 기존의 PK 값이 존재하면 -> update SQL
     // 데이터가 저장되는 공간 : 영속성(일관성, 정보가 항상 일치) 메모리 (자동더티체킹)
     // Book(Object)(수정) <---------------> book(Table)
+    // - 특정 데이터 삭제하기 - deleteById(Long id)
 }
 // interface BookRepository
 /*

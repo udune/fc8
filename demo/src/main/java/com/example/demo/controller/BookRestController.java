@@ -47,4 +47,15 @@ public class BookRestController {
             return new ResponseEntity<>("Not Updated" + id, HttpStatus.BAD_REQUEST);
         }
     }
+
+    // DELETE : http://localhost:8080/api/books/{id}
+    @DeleteMapping("/books/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
+        try {
+            service.deleteById(id);
+            return new ResponseEntity<>("Deleted book with id:" + id, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Failed : " + id, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
